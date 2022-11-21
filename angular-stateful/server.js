@@ -28,5 +28,6 @@ var server = app.listen(process.env.PORT || 8080, function () {
  *   PS: it's just an example, not mandatory
  */
 app.get("/api/status", function (req, res) {
+    console.log("A new request received");
     res.status(200).json({ status: "UP" });
 });
