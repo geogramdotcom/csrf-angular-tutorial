@@ -4,13 +4,13 @@ This project is a test for CSRF/XSRF Protection in Angular Stateful environments
 
 ## Development server
 
-Run `npm run start` to launch  angular on port 4200
+Run `npm install`
+Run `ng build` to create a compiled app `/dist/angular-stateful`
 Run `npm run server-stateful` to launch express (server) on port 8080. 
 
-Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Navigate to `http://localhost:8080/`. The application will automatically reload if you change any of the server.js settings.
 
-### Breakdown:
-Located in `scripts` within the package.json:
-node server.js & run this server in the background
-ng serve & run this service in the foreground
-fg move the most recently backgrounded shell into the foreground
+The server is using Angular pre-compiled files located in `/dist/angular-stateful` so that the server is running on the same port as the Angular web app. This is to avoid any issues with CORS blocking requests. 
+
+### Version:
+Node v18.12.1 (install a node manager `nvm` if you'd like to switch versions)
