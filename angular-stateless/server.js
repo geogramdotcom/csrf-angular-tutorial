@@ -29,10 +29,12 @@ var jsonParser = bodyParser.json()
 // In production, ensure you're using cors and helmet and have proper configuration.
 const { invalidCsrfTokenError, generateToken, doubleCsrfProtection } =
   doubleCsrf({
-    getSecret: (req) => req.secret,
+    getSecret: (req) => {
+      req.secret; // A function that returns the secret for the request
+    },
     secret: CSRF_SECRET,
     cookieName: CSRF_COOKIE_NAME,
-    cookieOptions: { sameSite: true, secure: true, signed: true }, // not ideal for production, development only
+    cookieOptions: { sameSite: true, secure: true, signed: true},
     size: 128,
     ignoredMethods: ["GET", "HEAD", "OPTIONS"],
     getTokenFromRequest: (req) => req.headers["app-csrf-token"], // A function that returns the token from the request

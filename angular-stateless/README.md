@@ -1,27 +1,18 @@
-# AngularStateless
+# Angular CSRF Protection Implementation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+This project is a test for CSRF/XSRF Protection in Angular Stateless environments
 
-## Development server
+## Angular Stateless CSRF Protection 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Getting Started
+Run `npm install`
+Run `ng build` to create a compiled app `/dist/angular-stateless`
+Run `npm run server-stateless` to launch express (server) on port 8080. 
 
-## Code scaffolding
+Navigate to `http://localhost:8080/`. The application will automatically reload if you change any of the server.js settings.
+**NOTE:** Using safari when testing on localhost will not work when setting cookies for cross-domains. Use Google Chrome instead. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The server is using Angular pre-compiled files located in `/dist/angular-stateless` so that the server is running on the same port as the Angular web app. This is to avoid any issues with CORS blocking requests. 
 
-## Build
+This is using Node v18.12.1 (install a node manager `nvm` if you'd like to switch versions)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

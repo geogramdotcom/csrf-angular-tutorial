@@ -83,7 +83,7 @@ app.all('*', jsonParser, function(req, res, next){
     ); // For debugging
 
     next();
- });
+});
 
 // In Angular app component OnInit a request is made to `/csrf-token` go generate new token
 app.get("/csrf-token", (req, res) => {
