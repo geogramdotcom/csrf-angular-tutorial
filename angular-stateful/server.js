@@ -89,7 +89,7 @@ app.all('*', jsonParser, function(req, res, next){
 app.get("/csrf-token", (req, res) => {
     // send the token to the client
     var csrfToken = getTokenFromState(req)
-    return res.send({csrfToken: csrfToken});
+    return res.json({csrfToken: csrfToken});
 });
 
 // Add the csrfSynchronisedProtection
